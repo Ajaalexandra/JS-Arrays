@@ -3,7 +3,9 @@
 
 var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
-
+function first (arr) {
+  return arr[0]
+}
   //Code Here
 
 
@@ -13,7 +15,9 @@ var arr = [10,20,30];
 
 var arr = [40,50,60];
 //Create a function named 'last' that is given 'arr' as the argument and returns the last item in the given array.
-
+function last (arr) {
+  return arr[arr.length -1];
+}
 
   //Code Here
 
@@ -24,7 +28,14 @@ var arr = [40,50,60];
 var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
-  //Code Here
+ function looper (family) {
+  for( var i =0; i<family.length; i++) {
+   // alert(family[i])
+
+  }
+
+ } 
+ looper(family);//Code Here
 
 
 //Next problem
@@ -32,8 +43,14 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 
 
 var letters = ['A', 'B', 'C', 'D', 'E'];
-//Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
-
+//Write a function called reversedLooper that is given letters as it's only argument and lo
+// ops through the given array backwards alerting every item in the array starting at the end.
+function reversedLooper (letters) {
+  for (var i = letters.length -1;  i>= 0; i-- ) {
+    // alert(letters[i]);
+  }
+}
+reversedLooper(letters);
   //Code Here
 
 
@@ -43,7 +60,19 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
-  //Code Here
+ function evenFinder (nums) {
+   for ( var i = nums.length -1; i >= 0; i--) {
+    if ( nums[i] % 2 != 0) {
+      nums.splice(i, 1);
+      
+      
+    }
+   }
+  return nums;
+ } 
+ evenFinder(nums);
+ 
+ //Code Here
 
 
 
@@ -68,7 +97,25 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 //Write a function called divider that is given one argument, numbersArray.
-//Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
+//Have divider return an Array with the first item in the array being the evens array (all the even values 
+//from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
+
+  function divider (numbersArray) {
+    var even = [];
+    var odd = [];
+     for (var i =0; i < numbersArray.length; i++) {
+      if ( numbersArray[i] % 2 !== 0) {
+        odd.push(numbersArray[i])}
+        else {
+          even.push(numbersArray[i])
+        }
+     }
+        
+        return [even,odd];  
+    
+  
+  }
+  divider(numbersArray);
 
 
 
@@ -81,10 +128,16 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
-// var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30.  There is also a commented out array full of numbers to help you visualize what your function will be receiving.
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
+function finder(numbers) {
+      number = getRandomArbitrary();
+     return numbers.includes(number);
+}
+
+
 
   //Code Here
 
@@ -135,7 +188,11 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
-
+function addTen (arr) {
+  arr.map(function(cur, ind, arr){
+    return +cur + 10;
+  })
+}
 
 
 //Next Problem
